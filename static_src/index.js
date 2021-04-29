@@ -1,4 +1,9 @@
-import { script } from './script.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-script();
-console.log('А это index.js');
+let element = <h1 className="element">Кажется, мы подключили React</h1>;
+
+ReactDOM.render(
+    element,
+    document.getElementById('root'),
+);
