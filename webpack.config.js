@@ -9,7 +9,6 @@ module.exports = {
     },
     devServer: {
         contentBase: path.join(__dirname, "static_src"),
-        compress: true,
         port: 9000,
         watchContentBase: true,
         progress: true,
