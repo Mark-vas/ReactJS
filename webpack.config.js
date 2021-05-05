@@ -1,5 +1,8 @@
 const path = require("path");
+const HTMLPlugin = require('html-webpack-plugin');
+const CSSPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: path.resolve(__dirname, "static_src", "index.js"),
@@ -18,11 +21,14 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 include: path.resolve(__dirname, "static_src"),
-                loader: 'babel-loader',
                 exclude: /node_modules/,
-                options: {
-                    presets: ['@babel/env', '@babel/react'],
+                use: {
+                    loader: 'babel-loader',
                 },
+            },
+            {
+                test: /.(css)$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             },
         ],
     },

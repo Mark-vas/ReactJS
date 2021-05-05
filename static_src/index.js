@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-const messages = ['Как у тебя дела?']
+import { script } from './script';
+script();
 
-const Message = (props) => {
+const initialMessages = ['Как у тебя дела?'];
+
+
+const Message = () => {
+    const [messages, setMessages] = useState(initialMessages)
+
     const clickOnButton = () => {
-        messages.push('Нормально')
+        setMessages([...messages, 'Нормально'])
         console.log(messages)
     }
     return (
         <div>
-            <h1>{props.text}</h1>
-            <button onClick={clickOnButton} >Кнопка</button>
+            <h1>{messages}</h1>
+            <button onClick={clickOnButton}>Кнопка</button>
         </div>)
 }
 
 ReactDOM.render(
-    <Message text={messages} />,
+    <Message />,
     document.getElementById('root'),
 );
