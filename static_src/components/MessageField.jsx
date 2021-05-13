@@ -30,16 +30,20 @@ const MessageField = () => {
             {
                 author: AUTHORS.ROBOT,
                 text: answerRobot[0].text[random],
-
             }])
         }
     }, [messages])
 
     const messageElements =
         messages.map((message) => {
-            return <div>{message.author}: {message.text}</div>
+            return <div
+                className={`message ${message.author === AUTHORS.ROBOT ? "bot-message" : "human-message"
+                    }`
+                }
+            >
+                {message.author}: {message.text}</div>
         });
-    return (<div>
+    return (<div className="container">
         {messageElements}
         <Form onAddMessage={handleMessage} />
     </div>)
