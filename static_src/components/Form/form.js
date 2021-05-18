@@ -21,6 +21,7 @@ const Form = ({ onAddMessage }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(text)
         if (text !== '') {
             onAddMessage({ author: AUTHORS.HUMAN, text: text });
             setText('')
@@ -30,6 +31,7 @@ const Form = ({ onAddMessage }) => {
     return (
         <form onSubmit={handleSubmit}>
             <TextField
+                value={text}
                 name="input"
                 fullWidth={true}
                 hintText="Введите сообщение"
