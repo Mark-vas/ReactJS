@@ -41,9 +41,13 @@ const MessageField = () => {
                     }`
                 }
             >
-                {message.author}: {message.text}</div>
+                <div className={"textAuthor"}>
+                    <p>{message.text}</p>
+                    <p className={"nameAuthor"}>{message.author}</p>
+                </div>
+            </div>
         });
-    return (<div className="container">
+    return (<div className="WriteMessage">
         {messageElements}
         <Form onAddMessage={handleMessage} />
     </div>)

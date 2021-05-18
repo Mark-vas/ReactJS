@@ -46,4 +46,5 @@ const Form = ({ onAddMessage }) => {
 
 export default Form
 
-//            {/* <input type="submit" value="Отправить сообщение"></input> */}
+    //            {/* <input type="submit" value="Отправить сообщение"></input> */}
+
