@@ -29,8 +29,12 @@ const Form = ({ onAddMessage }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <TextField id="outlined-basic" label="Outlined" variant="outlined">
-                <input type="text" value={text} onChange={handleChange}></input>
+            <TextField
+                name="input"
+                fullWidth={true}
+                hintText="Введите сообщение"
+                style={{ fontSize: '22px' }}
+                onChange={handleChange}>
             </TextField>
             <br></br>
             <Button

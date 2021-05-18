@@ -42,4 +42,5 @@ justify-content: flex-end;
 
 .nameAuthor{
     font-size: 10px;
+    text-align: end;
 }
