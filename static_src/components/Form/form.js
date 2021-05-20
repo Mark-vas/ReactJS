@@ -21,9 +21,8 @@ const Form = ({ onAddMessage }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(text)
         if (text !== '') {
-            onAddMessage({ author: AUTHORS.HUMAN, text: text });
+            onAddMessage({ author: AUTHORS.HUMAN_1, text: text });
             setText('')
         }
     }

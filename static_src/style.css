@@ -45,3 +45,7 @@ justify-content: flex-end;
     font-size: 10px;
     text-align: end;
 }
+
+.dialogs{
+    margin-top: 30px;
+}
